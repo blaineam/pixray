@@ -188,8 +188,7 @@ class PixelDrawer(DrawingInterface):
 
         # Use GPU if available
         pydiffvg.set_use_gpu(torch.cuda.is_available())
-        pydiffvg.set_device(device)
-        self.device = device
+        self.device = pydiffvg.get_device()
 
     def get_opts(self):
         return self.opts
