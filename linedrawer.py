@@ -44,8 +44,7 @@ class LineDrawer(DrawingInterface):
     def load_model(self, settings, device):
         # Use GPU if available
         pydiffvg.set_use_gpu(torch.cuda.is_available())
-        device = torch.device('cuda')
-        pydiffvg.set_device(device)
+        device = pydiffvg.get_device()
 
         canvas_width, canvas_height = self.canvas_width, self.canvas_height
         num_paths = self.num_paths
